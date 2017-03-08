@@ -1,0 +1,21 @@
+<%= form_for(@clerk) do |f| %>
+	<div class="text-center" style="margin-top: 20px">
+		<p>Clerk ID:</p> 
+		<p><%= f.label :clekr_id, disabled:true, value:@randomID%>
+		   <%= f.hidden_field :clekr_id, value:@randomID %></p>
+
+		<p>Clerk Name:</p>
+		<p><%= f.text_field :clerk_name %></p>
+
+		<p>Clerk Age:</p> 
+		<p><%= f.text_field :clerk_age%></p>
+
+		<p>Clerk Address:</p> 
+		<p><%= f.text_field :clerk_address %></p>
+
+		<p>Contact Number:</p> 
+		<p><%= f.text_field :phone_num %></p>
+			
+		<p><%= f.submit "Add", class: "btn btn-success" %></p>
+	</div>
+<% end %>

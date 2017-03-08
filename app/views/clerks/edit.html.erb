@@ -1,0 +1,8 @@
+<%= form_for(@clerk, :url => {:action => "update"}) do |f|%>
+	<p>Clerk Name: <%= f.text_field :clerk_name %></p>
+	<p>Clerk Age: <%= f.text_field :clerk_age%></p>
+	<p>Clerk Address: <%= f.text_field :clerk_address %></p>
+	<p>Contact Number: <%= f.text_field :phone_num %></p>
+
+	<p><%= f.submit "Update Clerk" %></p>
+<% end %>

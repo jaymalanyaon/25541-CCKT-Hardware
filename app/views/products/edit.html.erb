@@ -1,0 +1,7 @@
+<%= form_for(@product, :url => {:action => "update"}) do |f|%>
+	<p>Product Name: <%= f.text_field :product_name %></p>
+	<p>Product Price: <%= f.text_field :product_price %></p>
+	<p>Available Stock: <%= f.text_field :product_stock %></p>
+
+	<p><%= f.submit "Update Product" %></p>
+<% end %>

@@ -1,0 +1,56 @@
+<%= form_for(@supplier) do |f| %>
+	<table>
+		<tr>
+			<td>
+				<p>Supplier ID:</p> 
+				<p><%= f.label :supplier_id, disabled:true, value:@randomIDsup %>
+			   	   <%= f.hidden_field :supplier_id, value:@randomIDsup %></p>
+			</td>
+
+			<td>
+				<p>Supplier Name:</p>
+				<p><%= f.text_field :supplier_name %></p>
+			</td>
+			
+			<td>
+				<p>Supplier Address:</p>
+				<p><%= f.text_field :supplier_address %></p>
+			</td>
+
+			<td>
+				<p>Shipment Date:</p>
+				<p><%= f.date_field :shipment_date %></p>
+			</td>
+
+			<td>
+				<p>Shipment Amount:</p>
+				<p><%= f.text_field :shipment_amount %></p>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<p>Product ID: </p>
+				<p><label value="@randomIDprod"><%= @randomIDprod %></label></p>
+				<p><input type="hidden" name="product[product_id]" value="<%= @randomIDprod %>"></p>
+			</td>
+
+			<td>
+				<p>Product Name:</p>
+				<p><input type="text_field" name="product[product_name]"></p>
+			</td>
+
+			<td>
+				<p>Product Stock:</p>
+				<p><input type="text_field" name="product[product_stock]"></p>
+			</td>
+
+			<td>
+				<p>Product Price:</p>
+				<p><input type="text_field" name="product[product_price]"></p>
+			</td>
+		</tr>
+	</table>
+
+	<p><%= f.submit "Add", class: "btn btn-success" %></p>	
+<% end %>

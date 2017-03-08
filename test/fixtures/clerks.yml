@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  clekr_id: 1
+  clerk_name: MyString
+  clerk_age: 1
+  clerk_address: MyText
+  clerk_contact: 1
+
+two:
+  clekr_id: 1
+  clerk_name: MyString
+  clerk_age: 1
+  clerk_address: MyText
+  clerk_contact: 1

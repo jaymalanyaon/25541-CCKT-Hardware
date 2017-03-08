@@ -1,0 +1,9 @@
+<%= form_for(@supplier, :url => {:action => "update"}) do |f|%>
+	<p>Supplier Name: <%= f.text_field :supplier_name %></p>
+	<p>Supplier Address: <%= f.text_field :supplier_address %></p>
+	<p>Shipment Date: <%= f.date_field :shipment_date %></p>
+	<p>Shipment Amount: <%= f.text_field :shipment_amount %></p>
+
+	<p><%= f.submit "Update Supplier" %></p>
+
+<% end %>

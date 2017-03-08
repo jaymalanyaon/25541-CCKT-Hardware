@@ -1,0 +1,19 @@
+<%= form_for(@product) do |f| %>
+	<div class="text-center" style="margin-top: 20px">
+		<p>Product ID:</p> 
+		<p><%= f.label :product_id, disabled:true, value:@randomID %>
+		   <%= f.hidden_field :product_id, value:@randomID %>
+		</p>
+		
+		<p>Product Name:</p> 
+		<p><%= f.text_field :product_name %></p>
+		
+		<p>Product Price:</p> 
+		<p><%= f.text_field :product_price %></p>
+		
+		<p>Available Stock:</p> 
+		<p><%= f.text_field :product_stock %></p>
+
+		<p><%= f.submit "Add", class: "btn btn-success" %></p>
+	</div>
+<% end %>

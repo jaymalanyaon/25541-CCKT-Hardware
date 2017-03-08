@@ -1,0 +1,41 @@
+<center>
+			<p><span class="fa-stack fa-5x">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+            </span></p>
+            <p><h1 style="padding-bottom: 20px">CLERKS</h1></p>
+</center>
+<table style="width: 100%" class="table table-hover">
+	<thead>
+		<tr>
+			<th style="text-align: center">Clerk ID</th>
+			<th style="text-align: center">Clerk Name</th>
+			<th style="text-align: center">Clerk Age</th>
+			<th style="text-align: center">Clerk Address</th>
+			<th style="text-align: center">Contact Number</th>
+			<th></th>
+		</tr>
+	</thead>
+
+	<tbody style="text-align: center">
+		<% @clerks.each do |clerk| %>	
+			<tr>
+				<td><%= clerk.clekr_id %></td>
+				<td><%= clerk.clerk_name %></td>
+				<td><%= clerk.clerk_age %></td>
+				<td><%= clerk.clerk_address %></td>
+				<td><%= clerk.phone_num %></td>
+				<td><a href="/clerks/<%= clerk.id %>/edit" class="btn btn-success"><span class="fa fa-info-circle"></span> Edit</a>
+				    <a href="/clerks/<%= clerk.id %>/delete" class="btn btn-danger"><span class="fa fa-trash"></span> Delete</a>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<br>
+
+<div style="margin-left: 50px">
+	<a class="btn" style="background-color: #555555; color: white" href="home">Back</a> 
+	<a class="btn" style="background-color: #555555; color: white" href="clerks/newclerk">Add Clerk</a>
+</div>
