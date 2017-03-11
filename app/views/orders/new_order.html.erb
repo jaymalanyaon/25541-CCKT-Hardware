@@ -26,6 +26,7 @@
 				<td><p>Product Price: 0</p></td>
 				<td><input type="number" min="1" max="100" name="order[order_quantity][]" data-price="0" onchange="changeTotalPrice(this)"> </td>
 				<td><p name = "totalPrice" data-price='0'></p></td>
+				<td><button class="btn btn-danger" type="button" onclick="remove(this)"><i class="fa fa-times"></i></button></td>
 			</tr>
 		</tbody>
 	
@@ -76,4 +77,5 @@
 		y.innerHTML = x.innerHTML;
 		document.getElementsByTagName('tbody')[0].appendChild(y);
 	}
+
 </script>

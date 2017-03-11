@@ -46,6 +46,27 @@ class SuppliersController < ApplicationController
     end
   end
 
+  def restock
+    @restocker = Supplier.new
+    @product_list = Product.all
+  end
+
+  def process_restock
+    @product_tmp = Product.all
+    @order = Order.new
+    @order.item_price= params[:order][:item_price]
+    @prodQuantity = @order.item_price
+    @order.order_total = params[:order][:order_total]
+      for i in 0..@prodQuantity do
+        @prodName = params[:order][:product_name][i]
+        @order.order_quantity = params[:order][:order_quantity][i]
+        @prodStock = @product_tmp.find_by(product_name: @prodName).product_stock
+        @product_tmp.find_by(product_name: @prodName).update(product_stock: @prodStock + @order.order_quantity )
+        i = i + 1
+      end
+    redirect_to "/suppliers"
+  end
+
   def delete
     @supplier = Supplier.find(params[:id])
     @supplier.destroy

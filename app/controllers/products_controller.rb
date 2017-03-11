@@ -29,6 +29,14 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def find
+    @sproduct = params[:product_search]
+    @products = Product.where(product_name: @sproduct)
+
+    render "index"
+
+  end
+
   def update
     @product = Product.find(params[:id])
     if @product.update_attributes(user_params)

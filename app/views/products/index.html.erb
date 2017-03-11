@@ -12,7 +12,12 @@
 			<th style="text-align: center">Product Name</th>
 			<th style="text-align: center">Product Price</th>
 			<th style="text-align: center">Available Stock</th>
-			<th style="text-align: center"></th>
+			<th style="text-align: center">
+				<%= form_tag "/products/find" do %>
+					<%= text_field_tag :product_search %>
+					<%= submit_tag :search %>
+				<% end %>
+			</th>
 		</tr>
 	</thead>
 
@@ -23,7 +28,7 @@
 				<td><%= product.product_name %></td>
 				<td><%= product.product_price %></td>
 				<td><%= product.product_stock %></td>
-				<td><a href="/products/<%= product.id %>" class="btn btn-success"><span class="fa fa-info-circle"> </span> Details </a>
+				<td>
 				<a href="/products/<%= product.id %>/delete" class="btn btn-danger"><span class="fa fa-trash"> </span> Delete</a></td>
 			</tr>
 		<% end %>
@@ -33,5 +38,5 @@
 <br>
 
 <div style="margin-left: 50px">
-	<a class="btn" style="background-color: #555555; color: white" href="home">Back</a> 
+	<a class="btn" style="background-color: #555555; color: white" href="../products">Back To List</a> 
 </div>

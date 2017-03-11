@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'suppliers/:id/delete' => 'suppliers#delete'
   get 'suppliers/:id' => 'suppliers#details'
 
+
 # PRODUCTS
   get 'products' => 'products#index'
   get 'products/newproduct' => 'products#newproduct'
@@ -29,6 +30,7 @@ Rails.application.routes.draw do
   patch 'products/:id/edit' => 'products#update'
   get 'products/:id/delete' => 'products#delete'
   get 'products/:id' => 'products#details'
+  post 'products/find' => 'products#find'
 
   #ORDERS
 
