@@ -1,0 +1,77 @@
+<%= form_for(@stock) do |s| %>
+<div class="container" style=" border-radius: 8px; text-align: center; width: 80%; padding: 15px; margin-top: 45px; background-color: #f7f7f7; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3)">
+<button class="btn btn-success" onClick="newItem()" type="button">New Item</button></p>
+<table width="100%" class="table table-hover">
+		<thead>
+			<tr>
+				<td>Product</td>
+				<td>Product Price</td>
+				<td>Quantity</td>
+				<td>Total Price</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr name= "new">
+				<td>
+					<p>
+	<select name="stock[product_name][]" onchange="changePrice(this)">
+		<option selected disabled>Select Product</option>
+			<%= @products.each do |p|%>
+		<option  value="<%= p.product_name %>" data-price="<%= p.product_price %>"><%= p.product_name %></option>
+		<% end %>
+	</select>
+	</p>
+				</td>
+				<td><p>Product Price: 0</p></td>
+
+	<td><input type="number" min="1" max="100" name="stock[stock_quantity][]" data-price="0" onchange="changeTotalPrice(this)"> </td>
+
+	<td><p name = "totalPrice" data-price='0'></p></td>
+				<td><button class="btn btn-danger" type="button" onclick="remove(this)"><i class="fa fa-times"></i></button></td>
+			</tr>
+		</tbody>
+	
+	</table>
+
+
+	<p id="totalPurchase" style="font-weight: bold">Total Purchase: </p>
+	<p><%= s.submit "Re-Stock", class: "btn btn-success" %> </p>
+	<input type="hidden" name="order[order_total]">
+	<input type="hidden" name="stock[counter]">
+<% end %>
+</div>
+<script>
+
+	
+
+	function changePrice(product_select){
+		price = product_select.selectedOptions[0].dataset.price
+		product_select.parentElement.parentElement.nextElementSibling.children[0].innerHTML = 'Product Price: ' + price;
+		product_select.parentElement.parentElement.nextElementSibling.nextElementSibling.children[0].dataset.price = price
+	}
+
+	function changeTotalPrice(price_input){
+		price_input.parentElement.nextElementSibling.children[0].innerHTML = (price_input.dataset.price * price_input.value) + ".0"
+		price_input.parentElement.nextElementSibling.children[0].dataset.price = (price_input.dataset.price * price_input.value)
+
+		var prices = document.getElementsByName('totalPrice');
+		var tmp = prices.length;
+		console.log(prices)
+		var total = 0;
+		for (var i = prices.length - 1; i >= 0; i--) {
+			total = total + parseInt(prices[i].dataset.price)
+		}
+		document.getElementById('totalPurchase').innerHTML = "Total Purchase: " + total + ".0";
+		document.getElementsByName('order[order_total]')[0].value =  total;
+		document.getElementsByName('stock[counter]')[0].value= parseInt(tmp - 1);
+
+	}
+
+	function newItem(){
+		var x = document.getElementsByName("new")[0];
+		var y = document.createElement('tr');
+		y.innerHTML = x.innerHTML;
+		document.getElementsByTagName('tbody')[0].appendChild(y);
+	}
+
+</script>

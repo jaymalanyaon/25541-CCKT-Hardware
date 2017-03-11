@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170305161338) do
+ActiveRecord::Schema.define(version: 20170311185354) do
 
   create_table "clerks", force: :cascade do |t|
     t.integer  "clekr_id"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 20170305161338) do
     t.integer  "product_stock"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.integer  "stock_quantity"
+    t.decimal  "stock_price"
+    t.decimal  "stock_payment"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "stock_counter"
+    t.string   "stock_name"
   end
 
   create_table "suppliers", force: :cascade do |t|
