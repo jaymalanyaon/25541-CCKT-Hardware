@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ord_id: 1
+  prod_name: MyString
+  quant: 1
+
+two:
+  ord_id: 1
+  prod_name: MyString
+  quant: 1

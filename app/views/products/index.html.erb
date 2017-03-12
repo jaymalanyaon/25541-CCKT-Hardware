@@ -1,3 +1,5 @@
+<div class="container" style=" border-radius: 8px; text-align: center; width: 90%; padding: 15px; margin-top: 45px; margin-bottom: 45px; background-color: #f7f7f7; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3)">
+
 <center>
 			<p><span class="fa-stack fa-5x">
             <i class="fa fa-circle fa-stack-2x"></i>
@@ -23,7 +25,7 @@
 
 	<tbody style="text-align: center">
 		<% @products.each do |product| %>	
-			<tr>
+			<tr id="rows">
 				<td><%= product.product_id %></td>
 				<td><%= product.product_name %></td>
 				<td><%= product.product_price %></td>
@@ -40,3 +42,15 @@
 <div style="margin-left: 50px">
 	<a class="btn" style="background-color: #555555; color: white" href="../products">Back To List</a> 
 </div>
+
+</div>
+
+
+<script>
+
+	var x = document.getElementById('rows').disabled = true;
+
+
+
+
+</script>

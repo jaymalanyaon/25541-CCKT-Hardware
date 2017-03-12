@@ -39,6 +39,11 @@ Rails.application.routes.draw do
   post 'orders' => 'orders#add_order'
   get 'orders/:id/delete' => 'orders#delete'
   get 'orders/:id' => 'orders#details'
+
+  #STOCKS
+
+  get 'stocks' => 'stocks#restock'
+  post 'stocks' => 'stocks#process_restock'
  
 end
 
