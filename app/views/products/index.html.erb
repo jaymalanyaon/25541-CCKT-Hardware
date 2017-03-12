@@ -25,7 +25,7 @@
 
 	<tbody style="text-align: center">
 		<% @products.each do |product| %>	
-			<tr>
+			<tr id="rows">
 				<td><%= product.product_id %></td>
 				<td><%= product.product_name %></td>
 				<td><%= product.product_price %></td>
@@ -44,3 +44,13 @@
 </div>
 
 </div>
+
+
+<script>
+
+	var x = document.getElementById('rows').disabled = true;
+
+
+
+
+</script>

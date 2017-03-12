@@ -19,7 +19,7 @@ def process_restock
 			@product_tmp.find_by(product_name: @stockName).update(product_stock: @prodStock.to_i + @stock.stock_quantity.to_i)
 			i = i + 1
 		end
-	redirect_to "/stocks"
+	redirect_to "/products"
 end
 
 end

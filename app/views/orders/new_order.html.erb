@@ -15,7 +15,7 @@
 			<tr name= "new">
 				<td>
 					<p>
-						<select name="order[product_name][]" onchange="changePrice(this)">
+						<select name="order[product_name][]" onchange="changePrice(this)" id="product_list">
 							<option selected disabled>Select Product</option>
 							<%= @product_list.each do |p|%>
 							<option  value="<%= p.product_name %>" data-price="<%= p.product_price %>"><%= p.product_name %></option>
@@ -23,10 +23,10 @@
 						</select>
 					</p>
 				</td>
-				<td><p>Product Price: 0</p></td>
+				<td><p id="pprice">Product Price: 0</p></td>
 				<td><input type="number" min="1" max="100" name="order[order_quantity][]" data-price="0" onchange="changeTotalPrice(this)"> </td>
 				<td><p name = "totalPrice" data-price='0'></p></td>
-				<td><button class="btn btn-danger" type="button" onclick="remove(this)"><i class="fa fa-times"></i></button></td>
+				<td><button class="btn btn-danger" type="button" onclick="removeOrder(this)"><i class="fa fa-times"></i></button></td>
 			</tr>
 		</tbody>
 	
@@ -36,10 +36,7 @@
 	<p><%= o.submit "Add Order", class: "btn btn-success" %> </p>
 	<input type="hidden" name="order[order_total]">
 	<input type="hidden" name="order[item_price]">
-	
-
-
-
+	<input type="hidden" name="order[list]">
 <% end %>
 	
 	
@@ -52,6 +49,7 @@
 		price = product_select.selectedOptions[0].dataset.price
 		product_select.parentElement.parentElement.nextElementSibling.children[0].innerHTML = 'Product Price: ' + price;
 		product_select.parentElement.parentElement.nextElementSibling.nextElementSibling.children[0].dataset.price = price
+
 	}
 
 	function changeTotalPrice(price_input){
@@ -67,15 +65,21 @@
 		}
 		document.getElementById('totalPurchase').innerHTML = "Total Purchase: " + total + ".0";
 		document.getElementsByName('order[order_total]')[0].value =  total;
-		document.getElementsByName('order[item_price]')[0].value= parseInt(tmp - 1);
+		document.getElementsByName('order[item_price]')[0].value = parseInt(tmp - 1);
+
 
 	}
 
 	function newItem(){
+		var tmp = 1;
 		var x = document.getElementsByName("new")[0];
 		var y = document.createElement('tr');
 		y.innerHTML = x.innerHTML;
 		document.getElementsByTagName('tbody')[0].appendChild(y);
 	}
+
+	function removeOrder(btn){
+		btn.parentNode.parentNode.remove();
+	}	
 
 </script>
