@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
 
 	def details
 		@order = Order.find(params[:id])
+
 		@product_list = OrderProductItem.where(:ord_id => @order.order_id)
 		@prices = []
 		@product_list.each do |item|
@@ -19,6 +20,7 @@ class OrdersController < ApplicationController
 
 		# render :text => @tmp.product_stock.inspect
 		# @list = $listTmp
+
 	end
 
 	def new_order
