@@ -32,8 +32,11 @@
 	
 	</table>
 
-	<p id="totalPurchase" style="font-weight: bold">Total Purchase: </p>	
-	<p><%= o.submit "Add Order", class: "btn btn-success" %> </p>
+	<p id="totalPurchase" style="font-weight: bold">Total Purchase: </p>
+
+	<a class="btn" style="background-color: #555555; color: white" href="../orders">Back
+	</a>
+	<%= o.submit "Add Order", class: "btn btn-success" %> 
 	<input type="hidden" name="order[order_total]">
 	<input type="hidden" name="order[item_price]">
 	

@@ -7,16 +7,14 @@ class OrdersController < ApplicationController
 
 	def details
 		@order = Order.find(params[:id])
+			
+
 	end
 
 	def new_order
 		@order = Order.new
 		@product_list = Product.all
 		@randomID = rand 10 ** 6
-	end
-		
-	def details
-		@order = Order.find(params[:id])
 	end
 
 	def add_order
