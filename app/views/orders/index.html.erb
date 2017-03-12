@@ -1,37 +1,39 @@
-<center>
-			<p><span class="fa-stack fa-5x">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-list-alt fa-stack-1x fa-inverse"></i>
-            </span></p>
-            <p><h1 style="padding-bottom: 20px">ORDERS</h1></p>
-</center>
-<table style="width: 100%;" class="table table-hover">
-	<thead>
-		<tr>
-			<th style="text-align: center">Order ID</th>
-			<th style="text-align: center">Order Date</th>
-			<th style="text-align: center">Total Purchase</th>
-			<th style="text-align: center"></th>
-			
-		</tr>
-	</thead>
-
-	<tbody style="text-align: center">
-		<% @orders.each do |o| %>	
+<div class="container" style=" border-radius: 8px; text-align: center; width: 90%; padding: 15px; margin-top: 45px; margin-bottom: 45px; background-color: #f7f7f7; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3)">
+	<center>
+				<p><span class="fa-stack fa-5x">
+				<i class="fa fa-circle fa-stack-2x"></i>
+				<i class="fa fa-list-alt fa-stack-1x fa-inverse"></i>
+				</span></p>
+				<p><h1 style="padding-bottom: 20px">ORDERS</h1></p>
+	</center>
+	<table style="width: 100%;" class="table table-hover">
+		<thead>
 			<tr>
-				<td><%= o.order_id %></td>
-				<td><%= o.order_date %></td>
-				<td><%= o.order_total %></td>
-				<td><a href="/orders/<%= o.id %>" class="btn btn-success"><span class="fa fa-info-circle"> </span> Details</a>
-				<a href="/orders/<%= o.id %>/delete" class="btn btn-danger"><span class="fa fa-trash"> </span> Delete</a></td>
+				<th style="text-align: center">Order ID</th>
+				<th style="text-align: center">Order Date</th>
+				<th style="text-align: center">Total Purchase</th>
+				<th style="text-align: center"></th>
+				
 			</tr>
-		<% end %>
-	</tbody>
-</table>
+		</thead>
 
-<br>
+		<tbody style="text-align: center">
+			<% @orders.each do |o| %>	
+				<tr>
+					<td><%= o.order_id %></td>
+					<td><%= o.order_date %></td>
+					<td><%= o.order_total %></td>
+					<td><a href="/orders/<%= o.id %>" class="btn btn-success"><span class="fa fa-info-circle"> </span> Details</a>
+					<a href="/orders/<%= o.id %>/delete" class="btn btn-danger"><span class="fa fa-trash"> </span> Delete</a></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
 
-<div style="margin-left: 50px">
-	<a class="btn" style="background-color: #555555; color: white" href="home">Back</a> 
-	<a class="btn" style="background-color: #555555; color: white" href="orders/new_order">New Order</a>
+	<br>
+
+	<div style="margin-left: 50px">
+		<a class="btn" style="background-color: #555555; color: white" href="home">Back</a> 
+		<a class="btn" style="background-color: #555555; color: white" href="orders/new_order">New Order</a>
+	</div>
 </div>
