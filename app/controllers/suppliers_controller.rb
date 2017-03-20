@@ -18,6 +18,8 @@ class SuppliersController < ApplicationController
   def add_supplier
     @supplier = Supplier.new
     @product = Product.new
+    @randomIDsup = rand 10 ** 5
+    @randomIDprod = rand 10 ** 5
     @supplier.supplier_id = params[:supplier][:supplier_id]
     @supplier.supplier_name = params[:supplier][:supplier_name]
     @supplier.supplier_address = params[:supplier][:supplier_address]

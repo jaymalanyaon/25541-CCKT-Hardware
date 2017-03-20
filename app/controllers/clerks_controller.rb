@@ -20,10 +20,16 @@ class ClerksController < ApplicationController
     @clerk.clerk_name = params[:clerk][:clerk_name]
     @clerk.clerk_age = params[:clerk][:clerk_age]
     @clerk.clerk_address = params[:clerk][:clerk_address]
-    @clerk.phone_num = params[:clerk][:phone_num  ]
-    @clerk.save
+    @clerk.clerk_contact = params[:clerk][:clerk_contact]
+    @randomID = rand 10 ** 5
+    
 
-    redirect_to "/clerks/#{@clerk.id}"
+      if @clerk.save then 
+        redirect_to "/clerks/#{@clerk.id}"
+      else
+        render "/clerks/newclerk"
+      end
+    
   end
 
   def edit
@@ -48,6 +54,6 @@ class ClerksController < ApplicationController
 
   private
     def user_params
-      params.require(:clerk).permit(:clerk_name, :clerk_age, :clerk_address, :phone_num )
+      params.require(:clerk).permit(:clerk_name, :clerk_age, :clerk_address, :clerk_contact )
     end
 end

@@ -26,9 +26,9 @@
 					<td><%= supplier.supplier_name %></td>
 					<td><%= supplier.supplier_address %></td>
 					<td>
-						<a href="/suppliers/<%= supplier.id %>/edit" class="btn btn-primary"><span class="fa fa-info-circle"></span> Edit</a>
+						<a href="/suppliers/<%= supplier.id %>/edit" class="btn btn-primary"><span class="fa fa-edit"></span> Edit</a>
 						<a href="/suppliers/<%= supplier.id %>" class="btn btn-success"><span class="fa fa-info-circle"></span> Details</a>
-						<a href="/suppliers/<%= supplier.id %>/delete" class="btn btn-danger"><span class="fa fa-info-circle"></span> Delete</a>
+						<a href="/suppliers/<%= supplier.id %>/delete" class="btn btn-danger"><span class="fa fa-trash"></span> Delete</a>
 					</td>
 				</tr>
 			<% end %>
