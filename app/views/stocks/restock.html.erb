@@ -35,7 +35,8 @@
 
 
 	<p id="totalPurchase" style="font-weight: bold">Total Purchase: </p>
-	<p><%= s.submit "Re-Stock", class: "btn btn-success" %> </p>
+	<a href="/suppliers" class="btn btn-danger">Cancel</a>
+	<%= s.submit "Re-Stock", class: "btn btn-success" %>
 	<input type="hidden" name="order[order_total]">
 	<input type="hidden" name="stock[counter]">
 <% end %>

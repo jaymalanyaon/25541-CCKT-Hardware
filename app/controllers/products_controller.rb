@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
     @sproduct = params[:product_search]
     @products = Product.where(product_name: @sproduct)
 
-    render "index"
+    render 'search'
 
   end
 

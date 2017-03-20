@@ -1,40 +1,35 @@
 <%= form_for(@clerk) do |f| %>
-
-	<div class="container">
-		<div class="row">
-			<div class="container" style=" border-radius: 8px; text-align: center; width: 40%; padding: 15px; margin-top: 45px; background-color: #f7f7f7; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3)">
-				<div style = "margin-top: 45px; margin-bottom: 45px; color: red">
-					<% @clerk.errors.full_messages.each do |message| %>
-						<li><%= message %> </li>
-					<% end %>
-				</div>
-				<form>
-				  <div class="form-group">
-				    <label>Clerk ID</label>
-				    <p><%= f.label :clekr_id, disabled:true, value:@randomID%>
-			   		   <%= f.hidden_field :clekr_id, value:@randomID %></p>
-				  </div>
-				  <div class="form-group">
-				    <label>Clerk Name</label>
-				    <p><%= f.text_field :clerk_name, class: "form-control", :required => true%></p>
-				  </div>
-				  <div class="form-group">
-				    <label>Clerk Age</label>
-				    <p><%= f.text_field :clerk_age, class: "form-control", :required => true%></p>
-				  </div>
-				  <div class="form-group">
-				    <label>Clerk Address</label>
-				    <p><%= f.text_field :clerk_address, class: "form-control", :required => true %></p>
-				  </div>
-				   <div class="form-group">
-				    <label>Contact Number</label>
-				    <p><%= f.text_field :clerk_contact, class: "form-control", :required => true %></p>
-				  </div>
-				  
-				  <a href="/clerks" class="btn btn-danger">Cancel</a>
-				  <button type="submit" class="btn btn-success">Submit</button>
-				</form>
-			</div>
-		</div>	
-	</div>
+	<div class="container" style=" border-radius: 8px; text-align: center; width: 35%; padding: 15px; margin-top: 0px; background-color: #f7f7f7; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3)">
+		<div style = "margin-top: 35px; margin-bottom: 0px; color: red">
+			<% @clerk.errors.full_messages.each do |message| %>
+				<li><%= message %> </li>
+			<% end %>
+		</div>
+		<form>
+		  <div class="form-group">
+		    <label>Clerk ID</label>
+		    <p><%= f.label :clekr_id, disabled:true, value:@randomID%>
+	   		   <%= f.hidden_field :clekr_id, value:@randomID %></p>
+		  </div>
+		  <div class="form-group">
+		    <label>Clerk Name</label>
+		    <p><%= f.text_field :clerk_name, class: "form-control", :required => true%></p>
+		  </div>
+		  <div class="form-group">
+		    <label>Clerk Age</label>
+		    <p><%= f.text_field :clerk_age, class: "form-control", :required => true%></p>
+		  </div>
+		  <div class="form-group">
+		    <label>Clerk Address</label>
+		    <p><%= f.text_field :clerk_address, class: "form-control", :required => true %></p>
+		  </div>
+		   <div class="form-group">
+		    <label>Contact Number</label>
+		    <p><%= f.text_field :clerk_contact, class: "form-control", :required => true %></p>
+		  </div>
+		  
+		  <a href="/clerks" class="btn btn-danger">Cancel</a>
+		  <button type="submit" class="btn btn-success">Submit</button>
+		</form>
+	</div>	
 <% end %>

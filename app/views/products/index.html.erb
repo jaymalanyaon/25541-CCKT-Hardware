@@ -17,7 +17,7 @@
 			<th style="text-align: center">
 				<%= form_tag "/products/find" do %>
 					<%= text_field_tag :product_search %>
-					<%= submit_tag :search%>
+					<%= submit_tag :search, class: "btn btn-success" %>
 				<% end %>
 			</th>
 		</tr>
@@ -40,7 +40,7 @@
 <br>
 
 <div style="margin-left: 50px" id = "back">
-	<a class="btn" style="background-color: #555555; color: white" href="../products">Back To List</a> 
+	<a class="btn" style="background-color: #555555; color: white" href="home">Back</a> 
 </div>
 
 </div>

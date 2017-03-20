@@ -22,7 +22,6 @@ class ClerksController < ApplicationController
     @clerk.clerk_address = params[:clerk][:clerk_address]
     @clerk.clerk_contact = params[:clerk][:clerk_contact]
     @randomID = rand 10 ** 5
-    
 
       if @clerk.save then 
         redirect_to "/clerks/#{@clerk.id}"

@@ -1,10 +1,11 @@
 <%= form_for(@clerk, :url => {:action => "update"}) do |f|%>
-<div class="container" style=" border-radius: 8px; text-align: center; width: 40%; padding: 15px; margin-top: 45px; background-color: #f7f7f7; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3)">
-	<p><strong>Clerk Name: </strong><%= f.text_field :clerk_name %></p>
-	<p><strong>Clerk Age: </strong><%= f.text_field :clerk_age%></p>
-	<p><strong>Clerk Address:</strong> <%= f.text_field :clerk_address %></p>
-	<p><strong>Contact Number:</strong> <%= f.text_field :phone_num %></p>
+<div class="container" style=" border-radius: 8px; text-align: center; width: 30%; padding: 15px; margin-top: 45px; background-color: #f7f7f7; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3)">
+		<p><strong>Clerk Name: </strong><%= f.text_field :clerk_name, class:"form-control" %></p>
+		<p><strong>Clerk Age: </strong><%= f.text_field :clerk_age, class:"form-control" %></p>
+		<p><strong>Clerk Address:</strong> <%= f.text_field :clerk_address, class:"form-control" %></p>
+		<p><strong>Contact Number:</strong> <%= f.text_field :phone_num, class:"form-control" %></p>
 
-	<p><%= f.submit "Update Clerk" %></p>
+		<a href="/clerks" class="btn btn-danger">Cancel</a>
+		<button type="submit" class="btn btn-success">Update</button>
 </div>
 <% end %>
