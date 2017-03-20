@@ -11,10 +11,7 @@
 					<%= @order.order_date %>
 				</p>
 
-				<p>
-					<strong>Total Purchase: </strong>
-					<%= @order.order_total %>
-				</p>
+				
 
 				<p>
 					<table style="width: 100%" class="table">
@@ -41,8 +38,15 @@
 						<% end %>
 					</table>	
 				 </p>
-				 <p><strong>Total Purchase: </strong></p>
-				<%= link_to 'Back', orders_path %>
+
+				 <p>
+					<strong>Total Purchase: </strong>
+					<%= @order.order_total %>
+				</p>
+				
+				<div style="margin-left: 50px">
+		<a class="btn" style="background-color: #555555; color: white" href="../orders">Back</a> 
+	</div>
 		</div>
 	</div>
 </div>

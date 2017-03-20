@@ -3,38 +3,38 @@
 		<div class="row">
 			<div class="col-md-6">
 				<center>	
-					<p>Supplier ID:</p> 
+					<p><strong>Supplier ID:</strong></p> 
 					<p><%= f.label :supplier_id, disabled:true, value:@randomIDsup %>
 				   	   <%= f.hidden_field :supplier_id, value:@randomIDsup %></p>
 
-					<p>Supplier Name:</p>
-					<p><%= f.text_field :supplier_name, :required => true %></p>
+					<p><strong>Supplier Name:</strong></p>
+					<p><%= f.text_field :supplier_name, :required => true, class: "form-control" %></p>
 				
-					<p>Supplier Address:</p>
-					<p><%= f.text_field :supplier_address, :required => true %></p>
+					<p><strong>Supplier Address:</strong></p>
+					<p><%= f.text_field :supplier_address, :required => true, class: "form-control"%></p>
 				
-					<p>Shipment Date:</p>
-					<p><%= f.date_field :shipment_date, :required => true %></p>
+					<p><strong>Shipment Date:</strong></p>
+					<p><%= f.date_field :shipment_date, :required => true, class: "form-control"%></p>
 				
-					<p>Shipment Amount:</p>
-					<p><%= f.number_field :shipment_amount, :required => true %></p>
+					<p><strong>Shipment Amount:</strong></p>
+					<p><%= f.number_field :shipment_amount, :required => true, class: "form-control"%></p>
 				</center>
 			</div>
 
 			<div class="col-md-6" style="margin-top: 30px">
 				<center>
-					<p>Product ID: </p>
+					<p><strong>Product ID: </strong></p>
 					<p><label value="@randomIDprod"><%= @randomIDprod %></label></p>
 					<p><input type="hidden" name="product[product_id]" value="<%= @randomIDprod %>"></p>
 				
-					<p>Product Name:</p>
-					<p><input type="text_field" name="product[product_name]" required></p>
+					<p><strong>Product Name:</strong></p>
+					<p><input type="text_field" name="product[product_name]" required class = "form-control"></p>
 					
-					<p>Product Stock:</p>
-					<p><input type="number" name="product[product_stock]" required></p>
+					<p><strong>Product Stock:</strong></p>
+					<p><input type="number" name="product[product_stock]" required class = "form-control"></p>
 				
-					<p>Product Price:</p>
-					<p><input type="number" name="product[product_price]" required></p>
+					<p><strong>Product Price:</strong></p>
+					<p><input type="number" name="product[product_price]" required class = "form-control"></p>
 				</center>
 			</div>
 		</div>
