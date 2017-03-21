@@ -20,7 +20,7 @@ class ClerksController < ApplicationController
     @clerk.clerk_name = params[:clerk][:clerk_name]
     @clerk.clerk_age = params[:clerk][:clerk_age]
     @clerk.clerk_address = params[:clerk][:clerk_address]
-    @clerk.clerk_contact = params[:clerk][:clerk_contact]
+    @clerk.phone_num = params[:clerk][:phone_num]
     @randomID = rand 10 ** 5
 
       if @clerk.save then 
@@ -53,6 +53,6 @@ class ClerksController < ApplicationController
 
   private
     def user_params
-      params.require(:clerk).permit(:clerk_name, :clerk_age, :clerk_address, :clerk_contact )
+      params.require(:clerk).permit(:clerk_name, :clerk_age, :clerk_address, :phone_num )
     end
 end
